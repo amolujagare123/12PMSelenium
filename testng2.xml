@@ -1,17 +1,15 @@
 <suite name="Project name">
+<!--lets disable all the methods with group name 'email'-->
+    <groups>
+        <run>
+            <include name="email"/>
+        </run>
+    </groups>
+
 
     <test name="module 1">
         <classes>
-            <class name = "TestNGDemos.Demo.ClassOne">
-
-            <methods>
-                <include name="classOnetest2"/>
-            </methods>
-
-            </class>
-
-
-
+            <class name = "TestNGDemos.Demo.ClassOne"/>
             <class name = "TestNGDemos.Demo.ClassTwo"/>
         </classes>
     </test>

@@ -1,8 +1,21 @@
 package TestNGDemos.Demo;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class ClassTwo {
+
+
+    @BeforeClass
+    public void beforeTestMethod()
+    {
+        System.out.println("beforeTestMethod()");
+    }
+
+    @AfterClass
+    public void afterTestMethod()
+    {
+        System.out.println("afterTestMethod()");
+    }
 
     @Test
     public void classTwotest1()
@@ -10,7 +23,7 @@ public class ClassTwo {
         System.out.println("classTwotest1()");
     }
 
-    @Test
+    @Test (groups = "email")//(enabled=false)
     public void classTwotest2()
     {
         System.out.println("classTwotest2()");

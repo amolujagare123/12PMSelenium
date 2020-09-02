@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SampleProject">
+    <test thread-count="5" name="Module1">
+        <classes>
+            <class name="TestNGDemos.Deepak.Mails"/>
+        </classes>
+    </test> <!-- Test -->
+    <test thread-count="5" name="Module2">
+        <classes>
+            <class name="TestNGDemos.Deepak.OnlineTrainings"/>
+            <class name="TestNGDemos.Deepak.SocialNetworks"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

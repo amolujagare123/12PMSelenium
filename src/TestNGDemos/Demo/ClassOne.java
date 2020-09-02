@@ -10,7 +10,7 @@ public class ClassOne {
         System.out.println("classOnetest1()");
     }
 
-    @Test
+    @Test (groups = "email") // (enabled=false)
     public void classOnetest2()
     {
         System.out.println("classOnetest2()");
