@@ -29,28 +29,28 @@ public class ClcickLinktestNG2 {
     }
 
 
-    @Test
+    @Test (priority = 1)
     public void clickCustomer()
     {
         WebElement element = driver.findElement(By.xpath("//a[contains(@class,'customers-tab')]"));
         element.click();
     }
 
-    @Test
+    @Test  (priority = 2)
     public  void clickSales()
     {
         WebElement element = driver.findElement(By.className("sales-tab"));
         element.click();
     }
 
-    @Test
+    @Test  (priority = 3)
     public  void clickSupplier()
     {
         WebElement element = driver.findElement(By.xpath("//a[contains(@class,'supplier-tab')]"));
         element.click();
     }
 
-    @Test
+    @Test  (priority = 4)
     public  void clickPurchase()
     {
         WebElement element = driver.findElement(By.xpath("//a[@class='purchase-tab']"));
