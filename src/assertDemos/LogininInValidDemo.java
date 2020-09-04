@@ -1,10 +1,8 @@
-package JunitDemo;
+package assertDemos;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginDemoAssert {
-
+public class LogininInValidDemo {
     @Test
     public void logintest()
     {
@@ -38,21 +35,24 @@ public class LoginDemoAssert {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
-        String expected = "http://stock.scriptinglogic.net/dashboard.php1";
+        String expected = "Wrong Username or Password";
 
-        String actual = driver.getCurrentUrl();
+        String actual = "";
+
+        try {
+
+            WebElement errorMessage = driver.findElement(By.xpath("//div[contains(@class,'error-box round')]"));
+            actual = errorMessage.getText(); // getText() - it gives text inside the webelement
+            System.out.println("Error MSg:"+actual);
+        }
+        catch (Exception e)
+        {
+            actual = "";
+        }
+
+        Assert.assertEquals("incorrect error msg or error message is absent",expected,actual);
 
 
-        Assert.assertEquals("url is not as expected & so the test is failed",expected,actual);
-
-
-        org.testng.Assert.assertEquals(actual,expected,"message");
-
-
-        /*if(expected.equals(actual))
-            System.out.println("test is passed");
-        else
-            System.out.println("test is failed");*/
 
     }
 }
