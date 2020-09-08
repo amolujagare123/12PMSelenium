@@ -1,12 +1,21 @@
 <suite name="Project name">
 
+    <!--<listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter2" />
+    </listeners>-->
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
     <test name="module 1">
         <classes>
             <class name = "TestNGDemos.Demo.ClassOne">
 
-            <methods>
+           <!-- <methods>
                 <include name="classOnetest2"/>
-            </methods>
+            </methods>-->
 
             </class>
 

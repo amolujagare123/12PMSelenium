@@ -1,5 +1,6 @@
 package TestNGDemos.Demo;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -16,6 +17,9 @@ public class ClassThree {
     public void afterMySuite()
     {
         System.out.println("afterMySuite()");
+
+
+
     }
 
     @Test
@@ -28,6 +32,10 @@ public class ClassThree {
     public void classThreetest2()
     {
         System.out.println("classThreetest2()");
+
+        String expected = "output1";
+        String actual = "output2";
+        Assert.assertEquals(actual,expected,"this is failed");
     }
 
     @Test
